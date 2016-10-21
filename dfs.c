@@ -1,3 +1,5 @@
+/*
+//全排列搜索 
 #define MAX 10
 #include <stdio.h>
 int a[MAX],book[MAX],n;
@@ -28,29 +30,27 @@ int main()
 	//system("pause");
 	return 0;
 }
+*/
 
-/*
+
 #define MAX 10
 #include <stdio.h>
 char dict[3] = {"+*"},result[MAX]={0};
-int book[2]={0},n;
+int n;
 // 从step 0开始 
 void dfs(int step){
 	int i;
-	printf("step %d\n",step);
+	//printf("step %d\n",step);
+    //n个位置 
     if(step==n){
         printf("%s\n",result);
         return;
     }
-    //有问题 
+    //每个位置几个选择 
     for(i=0;i<2;i++){
-		if(book[i]==0){
-			result[step] = dict[i];
-			book[i] = 1;
-            dfs(step+1);
-            book[i] = 0;
-		}        
-    }
+		result[step] = dict[i];
+		dfs(step+1);		       
+    }    
 }
 int main()
 {
@@ -59,4 +59,4 @@ int main()
 	//system("pause");
 	return 0;
 }
-*/
+
