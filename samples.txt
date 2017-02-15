@@ -1,0 +1,241 @@
+A - ¤Ï¤¸¤á¤Æ¤Î¤¢¤Ã¤È¤³©`¤À©`£¨Welcome to AtCoder£©
+Time limit : 2sec / Memory limit : 256MB
+
+Problem
+Your task is to process some data.
+You are given 3 integers a , b , c and a string s. Output result of a+b+c and string s with a half-width break.
+
+Input
+Input will be given in the following format from Standard Input:
+
+a
+b c
+s
+On the first line, you will be given a integer a(1¨Qa¨Q1,000).
+The second line, two integers b and c (1¨Qb,c¨Q1,000) will be given to you with a half-width break.
+And the final line, a string s will given to you. If we define the length of string s as |s| , it is guaranteed 1¨Q|s|¨Q100.
+Output
+Output the result of a+b+c and string s with a half-width break in one line.
+
+Also, make sure to insert a line break at the end of the output.
+
+Input Example #1
+1
+2 3
+test
+Output Example #1
+6 test
+1+2+3 equals to 6.
+Input Example #2
+72
+128 256
+myonmyon
+Output Example #2
+456 myonmyon
+72+128+256 equals to 456.
+Notice
+If you are C or C++ programmer, please designate the types of main function as int and not to forget return 0; .
+
+If you are Java programmer, please designate your class name as Main, not main.
+
+References
+We prepared some sample answers bellow (Not all programming languages).
+Please use these examples as reference.
+
+C
+C++
+Java
+C#
+PHP
+D
+Python
+Perl
+Ruby
+Haskell
+Pascal
+JavaScript(Node.js)
+Scala
+Example of C
+#include<stdio.h>
+ 
+int main()
+{
+    int a,b,c;
+    char s[101];
+    // get a integer
+    scanf("%d", &a);
+    // get two integers separated half-width break
+    scanf("%d %d",&b,&c);
+    // get a string
+    scanf("%s",s);
+    // output
+    printf("%d %s\n",a+b+c,s);
+    return 0;
+}
+Example of C++
+#include<iostream>
+using namespace std;
+ 
+int main()
+{
+    // get a integer
+    int a;
+    cin >> a;
+    // get two integers separated with half-width break
+    int b,c;
+    cin >> b >> c;
+    // get a string
+    string s;
+    cin >> s;
+    // output
+    cout << (a+b+c) << " " << s << endl;
+    return 0;
+}
+Example of Java
+import java.util.*;
+public class Main {
+	public static void main(String[] args){
+		Scanner sc = new Scanner(System.in);
+		// get a integer
+		int a = sc.nextInt();
+		// get two integers separated with half-width break
+		int b = sc.nextInt();
+		int c = sc.nextInt();
+		// get a string
+		String s = sc.next();
+		// output
+		System.out.println((a+b+c) + " " + s);
+	}
+}
+Example of C#
+using System;
+class Program
+{
+	static void Main(string[] args)
+	{
+		// get a integer
+		int a = int.Parse(Console.ReadLine());
+		// get two integers separated with half-width break
+		string[] input = Console.ReadLine().Split(' ');
+		int b = int.Parse(input[0]);
+		int c = int.Parse(input[1]);
+		// get a string
+		string s = Console.ReadLine();
+		//output
+		Console.WriteLine((a+b+c) + " " + s);
+	}
+}
+Example of PHP
+<?php
+# get a integer
+fscanf(STDIN, "%d", $a);
+# get two integers separated with half-width break
+fscanf(STDIN, "%d %d", $b, $c);
+# get a string
+fscanf(STDIN, "%s", $s);
+# output
+echo ($a+$b+$c)." ".$s."\n";
+?>
+Example of D
+import std.stdio;
+import std.string;
+import std.conv;
+void main()
+{
+	// get a integer
+	int a = to!int(chomp(readln()));
+	// get two integers separated with half-width break
+	string[] input = split(readln());
+	int b = to!int(input[0]);
+	int c = to!int(input[1]);
+	// get a string
+	string s = chomp(readln());
+	// output
+	writefln("%d %s", a+b+c, s);
+}
+Example of Python
+# -*- coding: utf-8 -*-
+# get a integer
+a = int(raw_input())
+# get two integers separated with half-width break
+b, c = map(int, raw_input().split())
+# get a string
+s = raw_input()
+# output
+print str(a+b+c) + " " + s
+Example of Perl
+# get a integer
+my $a = <STDIN>;
+# get two integers separated with half-width break
+my $input = <STDIN>;
+chomp $input;
+my ($b, $c) = split / /, $input;
+$ret = $a + $b + $c;
+# get a string
+my $s = <STDIN>;
+chomp $s;
+# output
+print "$ret $s\n";
+Example of Ruby
+# get a integer
+a = gets.to_i
+# get two integers separated with half-width break
+b,c=gets.chomp.split(" ").map(&:to_i);
+# get a string
+s = gets.chomp
+# output
+print("#{a+b+c} #{s}\n")
+Example of Haskell
+{- supportedby @tanakh -}
+import Control.Applicative
+main :: IO ()
+main = do
+    -- get a integer
+    a <- readLn
+    -- get two integers separated with half-width break
+    [b, c] <- map read . words <$> getLine
+    -- get a string
+    s <- getLine
+    -- output
+    putStrLn $ show (a + b + c) ++ " " ++ s
+Example of Pascal
+var
+    a, b, c : integer;
+    s : ShortString;
+begin
+    { get a integer }
+    readln(a);
+    { get two integers separated with half-width break }
+    read(b);
+    readln(c);
+    { get a string }
+    readln(s);
+    { output }
+    writeln(a+b+c, ' ', s);
+end.
+Example of JavaScript(Node.js)
+// parameter "input" gets all data
+function Main(input) {
+	// the first line is assigned to input[0], the second line is assigned to input[1] similarly.
+	input = input.split("\n");
+	tmp = input[1].split(" ");
+	// convert string from integer using "parseInt"
+	var a = parseInt(input[0], 10);
+	var b = parseInt(tmp[0], 10);
+	var c = parseInt(tmp[1], 10);
+	var s = input[2];
+	//output
+	console.log('%d %s',a+b+c,s);
+}
+// Don't edit this line!
+Main(require("fs").readFileSync("/dev/stdin", "utf8"));
+Example of Scala
+// supported by @_Floojual
+object Main extends App {
+    var a = readInt
+    var num = readLine
+    var s = readLine
+    var sum = a + num.split(" ")(0).toInt + num.split(" ")(1).toInt
+    println(sum + " " + s);
+}
+Submit
