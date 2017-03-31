@@ -3,5 +3,7 @@
 *.ncb
 *.opt
 *.plg
+*.o
+*.exe
 Debug
 
