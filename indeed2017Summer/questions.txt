@@ -1,0 +1,269 @@
+A - Spiral Move
+Time limit : 2sec / Memory limit : 256MB
+
+Score : 100 points
+
+Problem Statement
+You are given a board with N rows and N columns of squares. Let the coordinates of the square at the i-th row and j-th column be (i,j) (1¡Üi,j¡ÜN). Initially, all the squares are white.
+
+We will divide the passage of time into turns, and put a piece on square (1,1) at turn 1. The color of a square becomes black when visited by the piece. Square (1,1) turns black at turn 1.
+
+Then, we will move the piece following the procedure below. Here, every time we move the piece by one square, one turn elapses.
+
+Step 1: Repeatedly move the piece one square right as long as the destination is a white square.
+Step 2: Repeatedly move the piece one square down as long as the destination is a white square.
+Step 3: Repeatedly move the piece one square left as long as the destination is a white square.
+Step 4: Repeatedly move the piece one square up as long as the destination is a white square.
+Step 5: Go back to Step 1.
+Find the coordinates of the square occupied by the piece at turn M.
+
+Constraints
+1¡ÜN¡Ü1000
+1¡ÜM¡ÜN2
+Both N and M are integers.
+Input
+Input is given from Standard Input in the following format:
+
+N M
+Output
+Print the coordinates of the square occupied by the piece at turn M.
+
+Sample Input 1
+Copy
+2 3
+Sample Output 1
+Copy
+2 2
+The coordinates of the piece at each turn is as follows:
+
+Turn 1 : (1,1)
+Turn 2 : (1,2)
+Turn 3 : (2,2)
+Turn 4 : (2,1)
+Sample Input 2
+Copy
+4 8
+Sample Output 2
+Copy
+4 3
+Sample Input 3
+Copy
+1000 1000000
+Sample Output 3
+Copy
+501 500
+Submit
+
+
+B - Robot Orientation
+Time limit : 2sec / Memory limit : 256MB
+
+Score : 100 points
+
+Problem Statement
+There are N robots on the xy-plane. The current coordinates of the i-th robot at the 0-th minute is (ai,bi) (1¡Üi¡ÜN).
+
+At every minute from now on until the T-th minute, the robots must be at the N checkpoints specified for each minute. Each of the N checkpoints specified for the same minute must be occupied by one robot. The coordinates of the j-th of the checkpoints specified for the i-th minute is (cij,dij) (1¡Üi¡ÜT,1¡Üj¡ÜN).
+
+The Manhattan distance between two points (x1,y1) and (x2,y2) is |x1?x2|+|y1?y2|. Here, |x| represents the absolute value of x.
+
+Find the minimum total distance covered by the optimal movement of the robots until the T-th minute. Here, use Manhattan distance to calculate the distances covered by the robots.
+
+Constraints
+1¡ÜN¡Ü7
+1¡ÜT¡Ü100
+?105¡Üai,bi¡Ü105
+?105¡Ücij,dij¡Ü105
+(ai,bi)¡Ù(aj,bj)(1¡Üi<j¡ÜN)
+(cij,dij)¡Ù(cik,dik)(1¡Üj<k¡ÜN)
+All input values are integers.
+Input
+Input is given from Standard Input in the following format:
+
+N T
+a1 b1 ¡­ aN bN
+c11 d11 ¡­ c1N d1N
+:  
+cT1 dT1 ¡­ cTN dTN
+Output
+Print the minimum total distance covered by the optimal movement of the robots.
+
+Sample Input 1
+Copy
+3 2
+100 2 300 4 500 6
+100 1 300 3 500 5
+100 0 300 2 500 4
+Sample Output 1
+Copy
+6
+The optimal movement for each robot is as follows:
+
+The first robot: (100,2)¡ú(100,1)¡ú(100,0)
+The second robot: (300,4)¡ú(300,3)¡ú(300,2)
+The third robot: (500,6)¡ú(500,5)¡ú(500,4)
+Sample Input 2
+Copy
+7 7
+67713 33909 33836 41869 48202 -55981 25228 73097 -36409 68204 -18112 53282 -90146 27557
+94032 -51410 84572 -19631 -96923 -17401 57340 93364 -2401 651 51373 -1461 -47225 53199
+-23113 -49093 43632 -65826 32479 -51039 -76774 -17794 -67028 92308 93409 23587 -12614 -42196
+96134 -78703 95445 67153 46853 99595 24723 -5170 28312 -11609 -23248 -32142 -10519 28123
+-92881 -46756 15061 -44646 -50838 -80756 -43565 8998 90821 36119 11184 -80166 -97177 -66486
+49294 78278 -58495 -2590 852 -28113 -85652 59762 36511 -92147 11573 89991 792 -19780
+-66975 6920 76003 21403 8703 71236 -23879 -22392 -84066 70015 37068 46390 -2390 -31264
+99874 27238 -45279 94110 23675 32134 -7035 -3878 -42939 -41090 488 53101 -3945 -78084
+Sample Output 2
+Copy
+3335591
+Submit
+
+
+C - Network Configuration
+Time limit : 2sec / Memory limit : 256MB
+
+Score : 100 points
+
+Problem Statement
+There are N servers on the network in your office. Each server can only communicate with the other N?1 servers.
+
+You are given M forbidden pairs (ai,bi)(1¡Üi¡ÜM) of servers. Each of them means that direct communication between server ai and bi is forbidden.
+
+You will configure the network under these constraints. More specifically, for every pair of two different servers, you will determine whether they will directly communicate each other. Two configurations of network is considered different if there exist two servers that directly communicate in one of the two configuration, and do not directly communicate in the other.
+
+Under these conditions, you need to configure the network so that every servers can communicate with all other servers. How many different such configurations there are?
+
+Constraints
+2¡ÜN¡Ü6
+0¡ÜM¡ÜN(N?1)?2
+1¡Üai<bi¡ÜN
+(ai,bi)¡Ù(aj,bj)(1¡Üi<j¡ÜM)
+Input
+Input is given from Standard Input in the following format:
+
+N M  
+a1 b1    
+:    
+aM bM    
+Output
+Print how many different configurations are possible.
+
+Sample Input 1
+Copy
+4 2
+1 2
+3 4
+Sample Output 1
+Copy
+5
+The following five configurations are possible:
+
+There is direct communication between server 1 and 3, between 1 and 4 and between 2 and 3.
+There is direct communication between server 1 and 3, between 1 and 4 and between 2 and 4.
+There is direct communication between server 1 and 3, between 2 and 3 and between 2 and 4.
+There is direct communication between server 1 and 4, between 2 and 3 and between 2 and 4.
+There is direct communication between server 1 and 3, between 1 and 4, between 2 and 3 and between 2 and 4.
+Sample Input 2
+Copy
+5 0
+Sample Output 2
+Copy
+728
+Sample Input 3
+Copy
+6 2
+1 2
+3 4
+Sample Output 3
+Copy
+5758
+
+
+D - Defeat the Monsters!
+Time limit : 2sec / Memory limit : 256MB
+
+Score : 100 points
+
+Problem Statement
+A magician is fighting N monsters. The health of the i-th monster is Hi(1¡Üi¡ÜN). When a monster receives an attack of power atk, its health decreases by atk. A monster is considered defeated when its health becomes zero or below.
+
+There is a parameter for the magician, called the level. Before the fight, the value of the level is set to a positive integer K. The magician can perform two kinds of attacks. One attack of each kind targets one monster. These attacks are:
+
+Normal attack: has a power of 1 and can be used any number of times.
+Magic attack: has a power of K (that is, equal to the level) and can be used at most A times.
+Also, there is an additional constraint: he can perform at most B attacks in total, due to his limited stamina.
+
+Determine whether the magician can defeat all the monsters. If it is possible, find the minimum level necessary to defeat them.
+
+Constraints
+1¡ÜN¡Ü104
+0¡ÜA¡ÜB¡Ü109
+1¡ÜHi¡Ü109
+All Hi are integers.
+Partial Score
+30 points will be awarded for passing all the test cases satisfying 1¡ÜN¡Ü500, 0¡ÜA¡ÜB¡Ü500 and 1¡ÜHi¡Ü500.
+Input
+Input is given from Standard Input in the following format:
+
+N A B  
+H1  
+:  
+HN
+Output
+If it is not possible to defeat all the monsters under the conditions, print ?1. If it is possible, print the minimum level necessary to defeat them.
+
+Sample Input 1
+Copy
+3 2 4
+5
+3
+1
+Sample Output 1
+Copy
+4
+A level 4 magician can defeat all the monsters by performing the following attacks:
+
+One normal attack and one magical attack on the first monster
+One magical attack on the second monster
+One normal attack on the third monster
+Sample Input 2
+Copy
+5 6 10
+10
+9
+8
+7
+6
+Sample Output 2
+Copy
+7
+Sample Input 3
+Copy
+2 1 2
+10
+10
+Sample Output 3
+Copy
+-1
+Sample Input 4
+Copy
+4 10 100
+10
+20
+30
+40
+Sample Output 4
+Copy
+1
+Sample Input 5
+Copy
+5 6 166666666
+1000000000
+200000000
+250000000
+500000000
+333333333
+Sample Output 5
+Copy
+444444447
+This case is not included in the test cases for the partial score.
