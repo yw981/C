@@ -1,0 +1,318 @@
+A - Room Number
+Time limit : 2sec / Memory limit : 256MB
+
+Score : 100 points
+
+Problem Statement
+There is an N-story building that has ai rooms on the i-th floor (1¡Üi¡ÜN). In order to distinguish the rooms on each floor, we will assign a positive integer called the room number to each room. Two rooms on the same floor must be assigned different room numbers, but rooms on different floors may have the same room number. However, for cultural reasons, there are M integers that cannot be used as room numbers. These forbidden numbers are bj (1¡Üi¡ÜM).
+
+For each floor, we would like to assign room numbers so that the largest room number on the floor would be as small as possible. Find the smallest possible value of the largest room number on each floor.
+
+Constraints
+1¡ÜN¡Ü100
+1¡Üai¡Ü100(1¡Üi¡ÜN)
+1¡ÜM¡Ü100
+1¡Übj¡Ü100(1¡Üj¡ÜM)
+bj<bj+1(1¡Üj<M)
+All input values are integers.
+Input
+Input is given from Standard Input in the following format:
+
+N M
+a1
+:
+aN
+b1
+:
+bM
+Output
+Print N lines. The i-th line (1¡Üi¡ÜN) should contain the largest room number on the i-th floor when it is minimized.
+
+Sample Input 1
+Copy
+5 2
+1
+2
+3
+4
+5
+2
+4
+Sample Output 1
+Copy
+1
+3
+5
+6
+7
+The room number of a room in this building is 1, 3, 5, 6 or 7.
+
+Sample Input 2
+Copy
+5 5
+5
+10
+15
+20
+25
+2
+4
+6
+8
+10
+Sample Output 2
+Copy
+9
+15
+20
+25
+30
+
+
+B - Candy Order
+Time limit : 2sec / Memory limit : 256MB
+
+Score : 100 points
+
+Problem Statement
+You are an owner of a candy shop. There are N candies in stock at time 0.
+
+You will receive 3T requests from time 1 through time T, all of which needs to be handled. On each time i, there are three request that ask for Ai, Bi and Ci candies, respectively.
+
+The requests needs to be handled in the order they are received. The three requests received at the same time may be handled in any order of your choice. The handling of a request is as follows:
+
+Let K be the number of candies ordered.
+If there are K or more candies in stock, the request will be accepted. The number of candies in stock will be decreased by K.
+Otherwise, the request will be denied. The number of candies in stock will remain unchanged.
+You would like to maximize the number of accepted requests by handling the requests in the optimal order. Find the maximum possible number of accepted requests.
+
+Constraints
+1¡ÜN¡Ü20
+1¡ÜT¡Ü5
+1¡ÜAi,Bi,Ci¡ÜN(1¡Üi¡ÜT)
+All input values are integers.
+Input
+Input is given from Standard Input in the following format:
+
+N T
+A1 B1 C1  
+:
+AT BT CT  
+Output
+Find the maximum possible number of accepted requests.
+
+Sample Input 1
+Copy
+10 2
+2 4 6
+1 1 1
+Sample Output 1
+Copy
+5
+You can accept 5 requests as follows:
+
+Time 1: handle the requests in the order of A1=2, B1=4 and C1=6. The first and second requests are accepted, and the third is denied. The number of candies in stock becomes 4.
+Time 2: handle the requests in the order of A1=1, B1=1 and C1=1. All three requests are accepted. The number of candies in stock becomes 1.
+Sample Input 2
+Copy
+20 1
+6 7 7
+Sample Output 2
+Copy
+3
+Sample Input 3
+Copy
+10 3
+6 7 10
+10 4 10
+1 1 1
+Sample Output 3
+Copy
+4
+
+C - Binary Tree
+Time limit : 2sec / Memory limit : 256MB
+
+Score : 100 points
+
+Problem Statement
+You are given a binary tree with N vertices.
+
+A binary tree is a data structure that represents hierarchical relationship. Each vertex in a binary tree has at most one parent and at most two children. Those two children are called the left child and the right child. There exists only one vertex that does not have a parent, which is called the root.
+
+Figure 1 shows an example of a binary tree. In this figure, the black vertex is the root of the tree. Each of the blue edges connects a vertex and its left child; each red edge connects a vertex and its right child.
+
+
+Figure 1. an example of a binary tree
+
+In the given binary tree, the left child of vertex i (1¡Üi¡ÜN) is vertex li, and the right child is vertex ri. Here, the value of li may be 0, which means that vertex i does not have a left child. Similarly, the value of ri is 0 if vertex i does not have a right child. The root of the tree is vertex 1.
+
+Find the path from vertex 1 to vertex K when it is possible to move from a vertex to its left or right child. (This path always exists.)
+
+Constraints
+1¡ÜN¡Ü105
+1¡ÜK¡ÜN
+0¡Üli,ri¡ÜN
+All input values are integers.
+The input corresponds to a valid binary tree.
+Vertex 1 is the root of the tree.
+Input
+Input is given from Standard Input in the following format:
+
+N K
+l1 r1
+:
+lN rN
+Output
+Print a string S that represents a path starting at vertex 1 and ending at vertex K. The i-th character should correspond to the i-th move. Use the following characters to represent a move:
+
+L: a move to the left child
+R: a move to the right child
+Sample Input 1
+Copy
+6 6
+2 3
+4 5
+6 0
+0 0
+0 0
+0 0
+Sample Output 1
+Copy
+RL
+The binary tree given in this input is shown in the following figure:
+
+df506d00e9a3cf6d8d2cdabb5f977480.png
+The path from vertex 1 to vertex K=6 is 1 ¡ú 3 ¡ú 6, and thus the output should be RL.
+
+Sample Input 2
+Copy
+7 2
+2 6
+3 4
+0 0
+0 0
+0 0
+5 7
+0 0
+Sample Output 2
+Copy
+L
+Sample Input 3
+Copy
+10 10
+0 2
+3 0
+0 4
+5 0
+6 0
+0 7
+8 0
+0 9
+10 0
+0 0
+Sample Output 3
+Copy
+RLRLLRLRL
+
+
+D - Move Pieces
+Time limit : 2sec / Memory limit : 256MB
+
+Score : 100 points
+
+Problem Statement
+You are given a sequence of N integers, a. Each element in a is an integer between 1 and N (inclusive).
+
+Based on this sequence, we will conduct the following simulation using N boxes and N pieces:
+
+At time 0, put piece i in box i, for all i (1¡Üi¡ÜN).
+During the transition from time t to time t+1, move all the pieces in box i to box ai, for all i (1¡Üi¡ÜN).
+For each piece, what box contains it at time T?
+
+Constraints
+1¡ÜN¡Ü105
+1¡Üai¡ÜN
+0¡ÜT¡Ü1018
+All input values are integers.
+Partial Score
+30 points will be awarded for passing all the test cases satisfying 1¡ÜN¡Ü1000 and 0¡ÜT¡Ü1000.
+Input
+Input is given from Standard Input in the following format:
+
+N T
+a1
+:
+aN
+Output
+Print N lines. The i-th line (1¡Üi¡ÜN) should contain the index of the box that contains piece i.
+
+Sample Input 1
+Copy
+5 7
+2
+3
+4
+5
+2
+Sample Output 1
+Copy
+4
+5
+2
+3
+4
+Each piece moves as follows:
+
+Piece 1: box 1 ¡ú box 2 ¡ú box 3 ¡ú box 4 ¡ú box 5 ¡ú box 2 ¡ú box 3 ¡ú box 4
+Piece 2: box 2 ¡ú box 3 ¡ú box 4 ¡ú box 5 ¡ú box 2 ¡ú box 3 ¡ú box 4 ¡ú box 5
+Piece 3: box 3 ¡ú box 4 ¡ú box 5 ¡ú box 2 ¡ú box 3 ¡ú box 4 ¡ú box 5 ¡ú box 2
+Piece 4: box 4 ¡ú box 5 ¡ú box 2 ¡ú box 3 ¡ú box 4 ¡ú box 5 ¡ú box 2 ¡ú box 3
+Piece 5: box 5 ¡ú box 2 ¡ú box 3 ¡ú box 4 ¡ú box 5 ¡ú box 2 ¡ú box 3 ¡ú box 4
+Sample Input 2
+Copy
+8 1000
+2
+3
+4
+5
+6
+7
+8
+8
+Sample Output 2
+Copy
+8
+8
+8
+8
+8
+8
+8
+8
+Sample Input 3
+Copy
+10 1000000000000000000
+1
+6
+4
+6
+9
+7
+8
+3
+5
+4
+Sample Output 3
+Copy
+1
+4
+3
+4
+5
+6
+7
+8
+9
+3
+This test case is not included in the test set for the partial score.

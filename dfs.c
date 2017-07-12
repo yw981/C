@@ -35,7 +35,7 @@ int main()
 
 #define MAX 10
 #include <stdio.h>
-char dict[3] = {"+*"},result[MAX]={0};
+char dict[4] = {"1234567"},result[MAX]={0};
 int n;
 // ´Óstep 0¿ªÊ¼ 
 void dfs(int step){

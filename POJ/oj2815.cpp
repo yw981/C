@@ -43,7 +43,7 @@
 */
 #include <iostream>
 #include <cstring>
-#include<fstream>
+#include <fstream>
 #define MAX 50
 using namespace std;
 int m,n,map[MAX][MAX],room[MAX][MAX];
@@ -121,6 +121,6 @@ int main() {
 	}
 	cout << roomNum << endl;
 	cout << maxRoomArea << endl;
-	//drawMap();
+	drawMap();
 	return 0;  
 }

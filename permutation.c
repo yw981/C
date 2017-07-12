@@ -45,7 +45,7 @@ void permutation(char *str)
 }  
 int main()  
 {
-	char str[5] = {"aabb"};   
+	char str[5] = {"12345"};   
     printf("         去重全排列的递归实现\n");
     printf("%s的全排列如下:\n", str);  
     permutation(str);  
