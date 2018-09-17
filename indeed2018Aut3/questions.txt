@@ -1,0 +1,425 @@
+indcn2018032018/09/14 19:54:33?~?2018/09/14 21:54:33
+
+?Home
+
+?Tasks
+
+?Submit
+
+?Results
+
+?Custom Test
+
+A - Sum of Even Numbers
+
+Time limit?: 2sec /?Memory limit?: 1024MB
+
+Problem Statement
+
+There are?N?integers:?A1,A2,¡­,AN. We will make?Q?changes to these integers. The?q-th change is as follows:
+
+Add?Xq?to the integer?AIq.
+
+For each change, find the sum of the even numbers among the?N?integers?A1,A2,¡­,AN?after that change.
+
+Constraints
+
+1¡ÜN¡Ü200?000
+
+1¡ÜQ¡Ü150?000
+
+1¡ÜAi¡Ü1?000?(1¡Üi¡ÜN)
+
+1¡ÜIq¡ÜN?(1¡Üq¡ÜQ)
+
+1¡ÜXq¡Ü1?000?(1¡Üq¡ÜQ)
+
+Input
+
+Input is given from Standard Input in the following format:
+
+N Q A1 A2 ¡­ AN I1 X1 I2 X2 : IQ XQ 
+
+Output
+
+Print?Q?lines. The?q-th line (1¡Üq¡ÜQ) should contain the sum after the?q-th change.
+
+Sample Input 1
+
+Copy
+
+3 4 5 6 7 1 1 2 3 1 5 3 3 
+
+Sample Output 1
+
+Copy
+
+12 6 0 10 
+
+Initially,?(A1,A2,A3)=(5,6,7).
+
+After the first change,?(A1,A2,A3)=(6,6,7). The sum of even numbers among these integers is?6+6=12.
+
+After the second change,?(A1,A2,A3)=(6,9,7). The only even number among these integers is?6?and the sum is?6.
+
+After the third change,?(A1,A2,A3)=(11,9,7). There are no even numbers among these integers and the sum is?0.
+
+After the fourth change,?(A1,A2,A3)=(11,9,10). The only even number among these integers is?10?and the sum is?10.
+
+Sample Input 2
+
+Copy
+
+4 6 1000 1000 1000 1000 1 1 2 1 3 1 1 999 1 999 1 999 
+
+Sample Output 2
+
+Copy
+
+3000 2000 1000 3000 1000 4998 
+
+Submit
+
+Personal Information
+
+
+?
+
+
+
+?
+
+
+?
+
+
+
+
+
+
+
+B - Making Nondecreasing
+
+Time limit?: 2sec /?Memory limit?: 1024MB
+
+Problem Statement
+
+You are given a sequence of length?N:?X1,X2,¡­,XN. Consider performing the following operation some number of times (possibly zero) on this sequence:
+
+Choose an integer?i?(1¡Üi¡ÜN), and multiply the?i-th element of the sequence by?(?1).
+
+After these operations, let the new sequence be?y1,y2,¡­,yN. Your objective is to satisfy the following condition:
+
+For any?i?(1¡Üi¡ÜN?1),?yi¡Üyi+1?holds.
+
+Find the minimum number of operations needed, or print?-1?if no sequence of operations can satisfy the condition.
+
+Constraints
+
+2¡ÜN¡Ü100
+
+?1?000¡ÜXi¡Ü1?000?(1¡Üi¡ÜN)
+
+All values in input are integers.
+
+Input
+
+Input is given from Standard Input in the following format:
+
+N X1 X2 ¡­ XN 
+
+Output
+
+Print the answer.
+
+Sample Input 1
+
+Copy
+
+5 2 -1 1 1 -2 
+
+Sample Output 1
+
+Copy
+
+2 
+
+The given sequence is?[2,?1,1,1,?2]. Two operations can satisfy the condition, for example, as follows:
+
+Multiply the first element of the sequence by?(?1). The sequence becomes?[?2,?1,1,1,?2].
+
+Multiply the fifth element of the sequence by?(?1). The sequence becomes?[?2,?1,1,1,2].
+
+It is impossible to satisfy the condition by not more than one operation, so the answer is?2.
+
+Sample Input 2
+
+Copy
+
+3 -1 0 1 
+
+Sample Output 2
+
+Copy
+
+0 
+
+As the given sequence already satisfies the condition, no operation is needed.
+
+Sample Input 3
+
+Copy
+
+5 1 0 1 0 1 
+
+Sample Output 3
+
+Copy
+
+-1 
+
+No sequence of operations can satisfy the condition.
+
+Sample Input 4
+
+Copy
+
+5 1 2 3 4 -5 
+
+Sample Output 4
+
+Copy
+
+1 
+
+Submit
+
+Personal Information
+
+?
+
+
+?
+
+
+?
+
+
+
+?
+
+
+
+
+
+C - Number of Paths
+
+Time limit?: 2sec /?Memory limit?: 1024MB
+
+Problem Statement
+
+There is a grid of square cells with?H?rows and?W?columns. The cell at the?i-th row and the?j-th column (1¡Üi¡ÜH,1¡Üj¡ÜW) will be denoted as?(i,j).
+
+Each cell in this grid is painted white or black. The colors of the cells are represented by?H?strings?S1,S2,¡­,SH, each of length?W. The cell?(i,j)?(1¡Üi¡ÜH,?1¡Üj¡ÜW) is painted white if the?j-th character of the string?Si?is?., and painted black if that character is?#.
+
+Answer?Q?questions. The?q-th question?(1¡Üq¡ÜQ)?is as follows:
+
+A cell?(Iq,Jq)?is specified. Find the number of ways, modulo?109+7, to travel from the top-left cell?(1,1)?to the bottom-right cell?(H,W)?via the cell?(Iq,Jq), by repeatedly moving right or down to the adjacent cell, visiting only white cells.
+
+Constraints
+
+1¡ÜH¡Ü500
+
+1¡ÜW¡Ü500
+
+For each?i?(1¡Üi¡ÜH), the length of?Si?is?W.
+
+For each?i?(1¡Üi¡ÜH), each character of?Si?is?.?or?#.
+
+1¡ÜQ¡Ü100?000
+
+1¡ÜIq¡ÜH?(1¡Üq¡ÜQ)
+
+1¡ÜJq¡ÜW?(1¡Üq¡ÜQ)
+
+For each?q?(1¡Üq¡ÜQ), the cell?(Iq,Jq)?is white.
+
+The cells?(1,1)?and?(H,W)?are white.
+
+Input
+
+Input is given from Standard Input in the following format:
+
+H W S1 S2 : SH Q I1 J1 I2 J2 : IQ JQ 
+
+Output
+
+Print?Q?lines. The?q-th line (1¡Üq¡ÜQ) should contain the answer to the?q-th question.
+
+Sample Input 1
+
+Copy
+
+3 4 ..#. .... #... 3 3 2 2 2 1 4 
+
+Sample Output 1
+
+Copy
+
+2 6 0 
+
+For example, in the first question, there are two ways to travel, as follows:
+
+(1,1)¡ú(2,1)¡ú(2,2)¡ú(3,2)¡ú(3,3)¡ú(3,4)
+
+(1,1)¡ú(1,2)¡ú(2,2)¡ú(3,2)¡ú(3,3)¡ú(3,4)
+
+Thus, the first line should contain?2?modulo?109+7, that is,?2.
+
+Sample Input 2
+
+Copy
+
+15 25 ......................... ......................... ......................... ......................... ......................... ......................... ......................... ......................... ......................... ......................... ......................... ......................... ......................... ......................... ......................... 5 1 1 10 1 10 2 10 2 15 2 
+
+Sample Output 2
+
+Copy
+
+669554037 118755 982800 982800 15 
+
+Submit
+
+Personal Information
+
+?
+
+Tutorial
+
+?
+
+Rules
+
+?
+
+Glossary
+
+?
+
+
+
+
+
+
+
+
+
+D - Keys and Rooms
+
+Time limit?: 3sec /?Memory limit?: 1024MB
+
+Problem Statement
+
+In some building, there are?N?rooms, numbered?1,2,¡­,N. For each?i?(1¡Üi¡ÜN), you can find Key?i?in Room?i. These rooms are connected by?M?corridors. The?i-th corridor (1¡Üi¡ÜM) connects Room?Ui?and Room?Vi, and requires Key?Ki?to pass. Keys can be used repeatedly once you find them.
+
+You entered Room?1?without any keys in your hand. Find the number of the rooms that can be reached through corridors using the keys that can be found on the way. Here, Room?1?is counted as a room that can be reached.
+
+Constraints
+
+1¡ÜN¡Ü200?000
+
+1¡ÜM¡Ü200?000
+
+1¡ÜUi,Vi¡ÜN?(1¡Üi¡ÜM)
+
+1¡ÜKi¡ÜN?(1¡Üi¡ÜM)
+
+Ui¡ÙVi?(1¡Üi¡ÜM)
+
+If?i¡Ùj, then?(Ui,Vi)¡Ù(Uj,Vj)?and?(Ui,Vi)¡Ù(Vj,Uj).
+
+Any room can be reached from any other rooms, if one has all the keys.
+
+All values in input are integers.
+
+Input
+
+Input is given from Standard Input in the following format:
+
+N M U1 V1 K1 U2 V2 K2 : UM VM KM 
+
+Output
+
+Print the answer.
+
+Sample Input 1
+
+Copy
+
+4 4 1 2 1 1 3 2 2 4 4 3 4 4 
+
+Sample Output 1
+
+Copy
+
+3 
+
+Rooms?1,2?and?3?can be reached as follows:
+
+Initially, you are in Room?1. You can find Key?1?here.
+
+You can move from Room?1?to Room?2?using Key?1. You can find Key?2?here.
+
+You can move from Room?2?to Room?1?using Key?1, then from Room?1?to Room?3?using Key?2. You can find Key?3?here.
+
+Room?4?cannot be reached using these keys, so the answer is?3.
+
+Sample Input 2
+
+Copy
+
+3 3 1 2 3 2 3 1 3 1 2 
+
+Sample Output 2
+
+Copy
+
+1 
+
+Sample Input 3
+
+Copy
+
+4 5 1 2 1 1 3 1 2 4 4 4 3 2 1 4 3 
+
+Sample Output 3
+
+Copy
+
+4 
+
+Submit
+
+Personal Information
+
+?
+
+Tutorial
+
+?
+
+Rules
+
+?
+
+Glossary
+
+?
+
+FAQ
+
+Powered by?AtCoder.
+
+Remain
+01:58:00
+
